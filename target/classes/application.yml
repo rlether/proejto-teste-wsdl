@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: projeto-teste
+  threads:
+    virtual:
+      enabled: true
+
+server:
+  port: 8080
+  servlet:
+    context-path: /projeto-teste
+
+
+soap:
+  country-info:
+    wsdl-url: "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL"
+    endpoint-url: "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso"
+    connect-timeout-ms: 5000
+    read-timeout-ms: 10000
+    
+application:
+  title: 'projeto-teste'
+  version: '0.0.1-SNAPSHOT'
