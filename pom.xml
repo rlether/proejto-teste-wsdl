@@ -52,13 +52,16 @@
 
     <build>
         <plugins>
+            
             <!-- Plugin para geração de Stubs a partir do WSDL -->
             <plugin>
 			    <groupId>com.sun.xml.ws</groupId>
 			    <artifactId>jaxws-maven-plugin</artifactId>
 			    <version>${jaxws.version}</version>
 			    <executions>
+			    
 			        <execution>
+			            <id>generate-country-info</id>
 			            <goals>
 			                <goal>wsimport</goal>
 			            </goals>
@@ -74,8 +77,26 @@
 			                <extension>true</extension>
 			            </configuration>
 			        </execution>
+			        
+					<execution>
+			            <id>generate-number-conversion</id>
+			            <goals>
+			                <goal>wsimport</goal>
+			            </goals>
+			            <configuration>
+			                <wsdlDirectory>${project.basedir}/src/main/resources/wsdl</wsdlDirectory>
+			                <wsdlFiles>
+			                    <wsdlFile>NumberConversion.wsdl</wsdlFile>
+			                </wsdlFiles>
+			                <packageName>com.exemplo.continentes.soap.numberconversion</packageName>
+			                <sourceDestDir>${project.build.directory}/generated-sources/wsimport</sourceDestDir>
+			                <extension>true</extension>
+			            </configuration>
+			        </execution>
+			        
 			    </executions>
 			</plugin>
+			
             <!-- Adiciona o diretório gerado ao classpath de compilação -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>

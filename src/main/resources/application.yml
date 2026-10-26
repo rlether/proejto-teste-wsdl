@@ -17,6 +17,11 @@ soap:
     endpoint-url: "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso"
     connect-timeout-ms: 5000
     read-timeout-ms: 10000
+  number-conversion:
+    wsdl-url: "https://www.dataaccess.com/webservicesserver/numberconversion.wso?WSDL"
+    endpoint-url: "https://www.dataaccess.com/webservicesserver/numberconversion.wso"
+    connect-timeout-ms: 5000
+    read-timeout-ms: 10000
     
 application:
   title: '@project.artifactId@'
